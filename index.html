@@ -179,6 +179,37 @@
     .stickybar span{flex:1 1 auto;min-width:0;font-size:.86rem;line-height:1.3}
     .stickybar .btn{flex:0 0 auto;white-space:nowrap}
   }
+
+/* --- AU parity 9 Sep: the format cards, the founder card and the review cards match the master layout --- */
+.tiles{align-items:stretch}
+.tile{padding:28px 24px;text-decoration:none;color:inherit}
+.tile h4{font-size:1.2rem;margin-bottom:2px}
+.tile .t-price{font-family:var(--serif);color:var(--navy);font-size:1.75rem;margin:6px 0 2px}
+.tile .t-price span{font-size:.85rem;color:var(--sage);font-family:var(--sans);font-weight:600}
+.tile .t-sub{font-size:.83rem;color:var(--sage);margin-bottom:10px;text-align:center}
+.tile p{color:var(--muted);font-size:.96rem;margin:0 0 18px;flex:1}
+.tile .btn{width:100%;text-align:center;padding:14px 10px;font-size:.96rem}
+.tile .micro{font-size:.81rem;color:var(--sage);margin:9px 0 0;text-align:center}
+.tiles.book .tile{display:grid;grid-template-rows:subgrid;grid-row:span 9;row-gap:0}
+.tiles.book .tile:hover{transform:none}
+.tiles.book .tile p{flex:none}
+.tiles.book .tile .desc{margin-bottom:14px}
+.tiles.book .tile .bonus{background:#E3EEF7;border:1px solid #BFD4E8;border-radius:8px;padding:12px 13px;font-size:.88rem;color:var(--ink);margin:0 0 14px;text-align:center}
+.tiles.book .tile .bonus span{display:block}
+.tiles.book .tile .bonus.empty{background:none;border:0;padding:0;margin:0}
+.tiles.book .tile .btn{align-self:end;width:100%;justify-self:stretch;text-align:center;box-sizing:border-box;display:block}
+.founder{grid-template-columns:.42fr 1fr;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:38px 34px}
+.founder img{width:100%;max-width:none;height:auto;aspect-ratio:auto;object-fit:cover;border-radius:12px;border:2px solid var(--gold);margin:0}
+.founder .promise{border-top:1px solid var(--line)}
+.rev p{font-style:normal}
+.rev .who{font-size:.86rem;color:var(--sage);letter-spacing:normal;font-weight:400;padding-top:11px}
+.rev .who b{color:var(--navy);font-weight:700}
+@media(max-width:900px){
+  .tiles,.founder{grid-template-columns:1fr}
+  .founder img{max-width:260px;margin:0 auto}
+  .tiles.book .tile{grid-template-rows:none;grid-row:auto;display:flex;flex-direction:column}
+  .tiles.book .tile .btn{align-self:stretch}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "The Estate Organiser", "url": "https://theestateorganiser.ca/", "logo": "https://theestateorganiser.ca/assets/og-image.png", "description": "Fill-in-the-blanks workbooks that record your accounts, passwords, wishes and final instructions, so your family is not left guessing."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "The Estate Organiser", "url": "https://theestateorganiser.ca/"}</script><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D26NXBV715"></script>
@@ -284,9 +315,9 @@
     <h2 class="sec">See the actual pages before you decide.</h2>
     <p class="sub" style="max-width:none">Forty-seven sections, already laid out. You fill in what applies, ten quiet minutes at a time. The front page has never shown a single one of these.</p>
     <div class="peek">
-      <figure><img loading="lazy" src="/assets/look-inside/01-bank-accounts.jpg" alt="Bank accounts and investments page"><figcaption>Bank accounts &amp; investments</figcaption></figure>
-      <figure><img loading="lazy" src="/assets/look-inside/02-digital-passwords.jpg" alt="Passwords and digital access page"><figcaption>Passwords &amp; digital access</figcaption></figure>
-      <figure><img loading="lazy" src="/assets/look-inside/03-funeral-wishes.jpg" alt="Your funeral wishes page"><figcaption>Your funeral wishes</figcaption></figure>
+      <figure><img loading="lazy" src="/assets/look-inside/01-bank-accounts.jpg" alt="Bank accounts and investments page"><figcaption>Bank accounts and investments<br><span style="font-size:.8rem;color:var(--sage)">How it looks in the digital edition</span></figcaption></figure>
+      <figure><img loading="lazy" src="/assets/look-inside/02-digital-passwords.jpg" alt="Passwords and digital access page"><figcaption>Passwords and digital access<br><span style="font-size:.8rem;color:var(--sage)">How it looks in the digital edition</span></figcaption></figure>
+      <figure><img loading="lazy" src="/assets/look-inside/03-funeral-wishes.jpg" alt="Your funeral wishes page"><figcaption>Your funeral wishes<br><span style="font-size:.8rem;color:var(--sage)">How it looks in the digital edition</span></figcaption></figure>
     </div>
     <p style="margin-top:34px;text-align:center"><a class="btn btn-lg" href="/the-estate-organiser/">See the full book</a></p>
   </div>
@@ -306,32 +337,40 @@
       <span><i class="dot"></i>Free shipping in Canada</span>
     </div>
 
-    <div class="tiles">
-      <a class="tile" href="/the-estate-organiser/#choose-format">
-        <img class="tileimg contain" loading="lazy" src="/assets/ca-book-cover.png" alt="The Estate Organiser digital edition, Canadian Edition">
+    <div class="tiles book">
+      <div class="tile">
+        <img class="tileimg" loading="lazy" src="/assets/card-digital.jpg" alt="The Estate Organiser digital edition">
         <h4>Digital Edition</h4>
+        <p class="t-price">$79 <span>CAD</span></p>
         <p class="t-sub">Instant download</p>
         <p class="foryou">For you if you would rather type than write, and want to start in the next five minutes.</p>
         <p class="desc">The complete fillable Organiser on your computer. Type straight into it, or print any section at home. Individual chapters included.</p>
-        <span class="go">See the digital edition</span>
-      </a>
-      <a class="tile" href="/the-estate-organiser/#choose-format">
-        <img class="tileimg" loading="lazy" src="/assets/tile-printed-ca.jpg" alt="The printed Estate Organiser, Canadian Edition">
+        <p class="bonus empty"></p>
+        <a class="btn ghost" href="https://checkout.theestateorganiser.ca/895daf1c">Get the Digital Edition</a>
+        <p class="micro">Digital version only, no physical book</p>
+      </div>
+      <div class="tile">
+        <img class="tileimg" loading="lazy" src="/assets/card-printed.jpg" alt="The printed Estate Organiser on a kitchen table">
         <h4>Printed Edition</h4>
+        <p class="t-price">$139 <span>CAD</span></p>
         <p class="t-sub">Free shipping in Canada</p>
         <p class="foryou">For you if a book in a drawer beats a file on a laptop, for you or for a parent.</p>
         <p class="desc">The coil bound book, printed just for you and posted to your door. Fill it in with a pen at the kitchen table, no screens involved.</p>
-        <span class="go">See the printed edition</span>
-      </a>
-      <a class="tile featured" href="/the-estate-organiser/#choose-format">
-        <span class="tile-badge">Most people choose this</span>
-        <img class="tileimg" loading="lazy" src="/assets/tile-bundle-ca.jpg" alt="The printed book and the digital edition together">
+        <p class="bonus empty"></p>
+        <a class="btn ghost" href="https://checkout.theestateorganiser.ca/printed-book-only">Get the Printed Edition</a>
+        <p class="micro">Printed to order, allow up to two weeks</p>
+      </div>
+      <div class="tile featured">
+        <div class="tile-badge">Most people choose this</div><img class="tileimg" loading="lazy" src="/assets/card-both.jpg" alt="The printed book and the digital edition together">
         <h4>Printed + Digital</h4>
+        <p class="t-price">$149 <span>CAD</span></p>
         <p class="t-sub">Free shipping, digital instantly</p>
         <p class="foryou">For you if you want to start tonight and still end up with the book on the shelf.</p>
         <p class="desc">The printed book posted to you, plus the digital edition in your inbox tonight. Start straight away, write it up properly when the book arrives.</p>
-        <span class="go">See printed + digital</span>
-      </a>
+        <p class="bonus empty"></p>
+        <a class="btn" href="https://checkout.theestateorganiser.ca/printed-book-order">Get Printed + Digital</a>
+        <p class="micro">The one most people choose</p>
+      </div>
     </div>
 
     <div class="library" id="complete-library">
@@ -365,7 +404,7 @@
 <section style="background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="founder">
-      <img src="/assets/will.jpg" alt="Will, founder of The Estate Organiser">
+      <img src="/assets/will-founder.jpg" alt="Will Kimak, founder of The Estate Organiser">
       <div>
         <p class="eyebrow">The person behind it</p>
         <h3>Hi, I&rsquo;m Will.</h3>
@@ -380,55 +419,65 @@
   </div>
 </section>
 
+<section class="band-navy" style="text-align:center">
+  <div class="wrap center">
+    <p class="eyebrow">Prefer to start free?</p>
+    <h2 class="sec" style="color:var(--cream)">Take the free Executor Toolkit with you.</h2>
+    <p class="sub" style="color:#d9d3c4;max-width:600px;margin:10px auto 24px">A Day 1 to Month 12 roadmap, the common costly mistakes, notification letters and an expense tracker. Free and instant.</p>
+    <a href="/toolkit/" class="btn btn-lg">Send me the toolkit</a>
+    <p class="micro" style="color:#8f8a7c;margin-top:22px;max-width:640px;margin-left:auto;margin-right:auto">Educational content only. Not legal, financial or tax advice. Estate laws vary from province to province. Always consult a qualified professional.</p>
+  </div>
+</section>
+
 <section id="readers">
   <div class="wrap">
-    <p class="eyebrow">From our readers</p>
-    <h2 class="sec">What families are telling us.</h2>
+    <p class="eyebrow">What readers are saying</p>
+    <h2 class="sec">In their own words.</h2>
     <div class="reviews">
       <div class="rev">
         <h4>Beyond what she expected to get</h4>
         <p>&ldquo;It has exceeded my expectations by a country mile. Such a beautifully written document is priceless.&rdquo;</p>
-        <p class="who">Merryl</p>
+        <p class="who"><b>Merryl</b></p>
       </div>
       <div class="rev">
         <h4>It did the heavy lifting for her family</h4>
         <p>&ldquo;You've given me a way of putting those experiences into easy to navigate and understand instructions for my family. You've done the heavy lifting.&rdquo;</p>
-        <p class="who">GE, 71</p>
+        <p class="who"><b>GE</b>, 71</p>
       </div>
       <div class="rev">
         <h4>She had seen the other binders</h4>
         <p>&ldquo;I have seen binders on the market, but none have the depth of content that you have.&rdquo;</p>
-        <p class="who">Jacqui, 58</p>
+        <p class="who"><b>Jacqui</b>, 58</p>
       </div>
       <div class="rev">
         <h4>Things they had never thought of</h4>
         <p>&ldquo;There is so much in it we had not thought about. It is invaluable.&rdquo;</p>
-        <p class="who">Julie</p>
+        <p class="who"><b>Julie</b></p>
       </div>
       <div class="rev">
         <h4>It explains why, not only what</h4>
         <p>&ldquo;A very comprehensive document. I particularly like the explanations as to why a particular action is important.&rdquo;</p>
-        <p class="who">Joe, 83</p>
+        <p class="who"><b>Joe</b>, 83</p>
       </div>
       <div class="rev">
         <h4>Detail she would never have reached alone</h4>
         <p>&ldquo;There are things in it I would never have thought of. It is extremely detailed.&rdquo;</p>
-        <p class="who">Wendy, 68</p>
+        <p class="who"><b>Wendy</b>, 68</p>
       </div>
       <div class="rev">
         <h4>Professional enough that she wants to start</h4>
         <p>&ldquo;A comprehensive, thorough, and professional book. I am looking forward to filling it out.&rdquo;</p>
-        <p class="who">Louise, 65</p>
+        <p class="who"><b>Louise</b>, 65</p>
       </div>
       <div class="rev">
         <h4>The explanations set the tone</h4>
         <p>&ldquo;I really like the explanation at the beginning of each section, outlining what it is about and why. It sets the tone and purpose.&rdquo;</p>
-        <p class="who">Nicola, 55</p>
+        <p class="who"><b>Nicola</b>, 55</p>
       </div>
       <div class="rev">
         <h4>She used to work for the lawyers</h4>
         <p>&ldquo;I used to work for lawyers, so Wills were a daily situation. I believe everyone with assets needs one.&rdquo;</p>
-        <p class="who">Connie</p>
+        <p class="who"><b>Connie</b></p>
       </div>
     </div>
     <div class="center" style="margin-top:34px">
@@ -484,16 +533,6 @@
         <p>No, and that's by design. The Estate Organiser is a place to record your information and wishes. It isn't a Will, and it doesn't replace your lawyer or accountant. It simply makes sure that when your family needs those professionals, they can find everything fast. Rules vary across Canadian provinces and territories, so confirm the specifics with your own advisors.</p>
       </details>
     </div>
-  </div>
-</section>
-
-<section class="band-navy" style="text-align:center">
-  <div class="wrap center">
-    <p class="eyebrow">Prefer to start free?</p>
-    <h2 class="sec" style="color:var(--cream)">Take the free Executor Toolkit with you.</h2>
-    <p class="sub" style="color:#d9d3c4;max-width:600px;margin:10px auto 24px">A Day 1 to Month 12 roadmap, the common costly mistakes, notification letters and an expense tracker. Free and instant.</p>
-    <a href="/toolkit/" class="btn btn-lg">Send me the toolkit</a>
-    <p class="micro" style="color:#8f8a7c;margin-top:22px;max-width:640px;margin-left:auto;margin-right:auto">Educational content only. Not legal, financial or tax advice. Estate laws vary from province to province. Always consult a qualified professional.</p>
   </div>
 </section>
 
