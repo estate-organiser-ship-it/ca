@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How organised would your family find things?</title>
+<meta name="description" content="A free self-check: ten yes or no questions about what your family would need to find. See your score and what to sort first.">
+<link rel="canonical" href="https://theestateorganiser.ca/family-self-check/">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#F2EBDC;--surface:#FFFFFF;--ink:#1B2150;--ink-muted:#5B574F;
+  --accent:#C8A24B;--accent-pressed:#AF8A36;--ground-dark:#1B2150;--ink-on-dark:#F2EBDC;
+  --ink-on-dark-muted:rgba(255,255,250,.66);--hairline:rgba(27,33,80,.10);--hairline-strong:rgba(27,33,80,.22);
+  --font-display:'Gelasio',Georgia,serif;--font-body:'Inter',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --r-field:6px;--r-card:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--canvas);color:var(--ink);font-family:var(--font-body);font-weight:400;font-size:16px;line-height:1.6;letter-spacing:normal;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+main{flex:1 0 auto;width:100%}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;color:var(--ink);letter-spacing:normal;line-height:1.2}
+a{color:var(--ink)}
+.draft{background:var(--ink);color:var(--ink-on-dark);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:normal}
+header{padding:18px 16px;border-bottom:1px solid var(--hairline)}
+header .in{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+header img{height:44px;width:auto;display:block}
+header a.link{font-size:15px;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+main{max-width:720px;margin:0 auto;padding:28px 16px 56px}
+.card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-card);padding:32px 24px}
+@media(min-width:640px){.card{padding:44px 48px}}
+.eyebrow{font-size:15px;color:var(--ink-muted);margin-bottom:10px;letter-spacing:normal}
+h1{font-size:34px;margin-bottom:14px}
+@media(min-width:640px){h1{font-size:48px}}
+h2{font-size:34px;margin-bottom:12px}
+h3{font-size:19px;margin-bottom:8px}
+.lede{font-size:17px;color:var(--ink-muted);margin-bottom:24px}
+.btn{display:inline-block;background:var(--accent);color:var(--ink);font-family:var(--font-body);font-weight:700;font-size:17px;letter-spacing:normal;border:0;border-radius:var(--r-field);padding:16px 28px;text-decoration:none;cursor:pointer;min-height:52px}
+.btn:hover,.btn:active{background:var(--accent-pressed)}
+.btn.full{width:100%;text-align:center}
+.meta{font-size:15px;color:var(--ink-muted);letter-spacing:normal}
+.prog{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.bar{height:6px;background:var(--hairline);border-radius:var(--r-field);overflow:hidden;margin-bottom:28px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:var(--r-field);transition:width .25s}
+.q{font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1.3;margin-bottom:28px;letter-spacing:normal}
+@media(min-width:640px){.q{font-size:28px}}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{background:var(--surface);border:1.5px solid var(--hairline-strong);border-radius:var(--r-field);font-family:var(--font-body);font-weight:700;font-size:18px;color:var(--ink);padding:18px 12px;cursor:pointer;min-height:60px;letter-spacing:normal}
+.opt:hover{border-color:var(--ink)}
+.opt.on{background:var(--ink);color:var(--ink-on-dark);border-color:var(--ink)}
+.back{background:none;border:0;font-family:var(--font-body);font-size:15px;color:var(--ink-muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer;margin-top:22px;padding:6px 0}
+.score{display:flex;align-items:baseline;gap:10px;margin:6px 0 10px}
+.score b{font-family:var(--font-display);font-weight:700;font-size:64px;line-height:1}
+.score span{font-size:17px;color:var(--ink-muted)}
+.meter{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin-bottom:26px}
+.meter i{height:10px;border-radius:var(--r-field);background:var(--hairline)}
+.meter i.f{background:var(--accent)}
+.gaps{list-style:none;margin:8px 0 8px;border-top:1px solid var(--hairline)}
+.gaps li{padding:16px 0;border-bottom:1px solid var(--hairline)}
+.gaps b{display:block;font-size:17px;margin-bottom:2px}
+.gaps p{font-size:15px;color:var(--ink-muted)}
+.sect{margin-top:34px}
+.capture{background:var(--canvas);border-radius:var(--r-card);padding:24px 20px;margin-top:34px}
+.capture label{display:block;font-size:15px;font-weight:700;margin:14px 0 6px}
+.capture input{width:100%;font-family:var(--font-body);font-size:17px;color:var(--ink);background:var(--surface);border:1.5px solid var(--hairline-strong);border-radius:var(--r-field);padding:14px;letter-spacing:normal}
+.capture input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--ink)}
+.capture .btn{margin-top:18px}
+.err{color:#8A2A1B;font-size:15px;margin-top:10px;display:none}
+.offer{margin-top:34px;border:1px solid var(--hairline);border-radius:var(--r-card);overflow:hidden}
+.offer img{display:block;width:100%;height:auto;background:var(--canvas)}
+.offer .in{padding:24px 20px}
+.offer p{color:var(--ink-muted);margin-bottom:18px}
+.retake{margin-top:26px;text-align:center}
+.small{font-size:15px;color:var(--ink-muted);margin-top:22px}
+footer{background:var(--ground-dark);color:var(--ink-on-dark);padding:32px 16px}
+footer .in{max-width:720px;margin:0 auto}
+footer a{color:var(--ink-on-dark);margin-right:16px;font-size:15px}
+footer p{color:var(--ink-on-dark-muted);font-size:15px;margin-top:16px;line-height:1.55}
+</style>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D26NXBV715"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D26NXBV715');</script>
+</head>
+<body>
+<header><div class="in">
+  <a href="/"><img src="data:image/png;base64,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" alt="The Estate Organiser"></a>
+  <a class="link" href="/the-estate-organiser/">See the book</a>
+</div></header>
+<main><div class="card" id="card" aria-live="polite"></div></main>
+<footer><div class="in">
+  <a href="/privacy-policy/">Privacy</a><a href="/terms-of-service/">Terms</a><a href="/contact/">Contact</a>
+  <p>The Estate Organiser is an information-gathering and record-keeping tool. It is not legal, financial or tax advice, and it is not a Will, Power of Attorney, or any other legal document. Estate rules vary by province and change over time; consult a qualified lawyer, notary, accountant or financial advisor for advice specific to your circumstances.</p>
+  <p>© 2026 Prestige Worldwright Pty Ltd. All rights reserved.</p>
+</div></footer>
+<script>
+(function(){
+  // 18 Oct 2026: posts to the eo-cart-capture relay (kind selfcheck-us/ca), which writes the
+  // score + gaps fields and adds the SelfCheck tag; a Systeme workflow starts the follow-up campaign.
+  var CAPTURE_URL="https://eo-cart-capture-production.up.railway.app/capture";
+  var MARKET="ca";
+  var PRODUCT="The Estate Organiser";
+  var SALES="/the-estate-organiser/";
+  var Q=[{"q": "If you were in hospital tomorrow, would your family know the first few people to call, and have their numbers?", "gap": "Who to call first", "tip": "Write three names and numbers on one page and put it where your family will look first."}, {"q": "Would they know whether you have a will, and where the original is kept?", "gap": "Where the will is", "tip": "Note where the original sits and who holds a copy."}, {"q": "Could they list every bank account, credit card and RRSP, TFSA or pension account you hold?", "gap": "Your accounts, in one list", "tip": "List each one by institution and type, with the last four digits. Leave full passwords off the list."}, {"q": "Would they know which insurance policies you have (life, home, car, extended health) and who to contact about each?", "gap": "Insurance policies and who to call", "tip": "Note each insurer, the policy number and the phone number on the paperwork."}, {"q": "Could they get into your phone, email and photos if they had to?", "gap": "Your phone, email and photos", "tip": "Check the legacy contact setting on your phone, or note where your password manager is."}, {"q": "Would they know which bills, subscriptions and automatic payments to stop?", "gap": "Bills and automatic payments", "tip": "List anything that charges you each month or each year, and how it is paid."}, {"q": "Do they know who you would want making medical and money decisions if you could not?", "gap": "Who decides if you can't", "tip": "Write down who you would choose. A lawyer or, in Quebec, a notary can explain what makes it official where you live."}, {"q": "Would they know where to find the papers for your home, car and taxes (the property title, vehicle ownership and last tax return)?", "gap": "Home, car and tax papers", "tip": "Note where each one is kept, on paper or on a computer."}, {"q": "Do they know what you would want for a funeral or memorial?", "gap": "Funeral or memorial wishes", "tip": "A few lines is enough to start: burial or cremation, a song, who should be told."}, {"q": "Has at least one person been told where all of this is written down?", "gap": "Someone who knows where it all is", "tip": "Pick one person and tell them where the list lives. That one conversation does a lot of work."}];
+  var BANDS=[{"min": 8, "head": "Your family would find most of it.", "body": "That is a good place to be. The ones below are the small things that tend to slip through, like a subscription nobody knew about or a phone passcode nobody was told.", "offer_h": "If you want the last few pieces in one place", "offer_b": "The Estate Organiser has a page for each of these, so everything you have already sorted sits together in one book on the shelf, with nothing for your family to hunt for.", "cta": "See how The Estate Organiser works", "price": "Digital from $79 CAD. Printed and digital $149 CAD. One-time payment."}, {"min": 4, "head": "Your family would find some of it, and hunt for the rest.", "body": "What you have sorted is probably spread across a drawer, an inbox and your own memory. The hunt is the hard part for a family, and it usually lands in the same week as everything else.", "offer_h": "One place for the rest", "offer_b": "The Estate Organiser is one book with a page for each gap below. Fill it in at your own pace, a page at a time, and your family has one place to look.", "cta": "See how The Estate Organiser works", "price": "Digital from $79 CAD. Printed and digital $149 CAD. One-time payment."}, {"min": 0, "head": "Right now your family would be starting from scratch.", "body": "Plenty of people are here, and it can be fixed one page at a time. Most of what they would need is in your head, which is the one place they cannot look.", "offer_h": "Start with the first page", "offer_b": "The Estate Organiser walks you through it in order, one page per item, so you are not staring at a blank sheet wondering where to begin.", "cta": "See how The Estate Organiser works", "price": "Digital from $79 CAD. Printed and digital $149 CAD. One-time payment."}];
+  var DISC="This self-check is general information only. It is not legal, financial or tax advice. Rules differ from province to province, so talk to a qualified professional about your own situation.";
+  var ans=[];
+  var card=document.getElementById("card");
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function top(){try{window.scrollTo({top:0,behavior:"smooth"});}catch(e){window.scrollTo(0,0);}}
+
+  function intro(){
+    card.innerHTML='<div class="eyebrow">Free self-check, about three minutes</div>'
+      +'<h1>How organised would your family find things?</h1>'
+      +'<p class="lede">Ten yes or no questions about what your family would need to find if you were suddenly in hospital, or gone. You get a score out of 10 and a short list of what to sort first. Your result shows straight away, no sign-up needed.</p>'
+      +'<button class="btn" id="go">Start the self-check</button>'
+      +'<p class="small">'+DISC+'</p>';
+    document.getElementById("go").onclick=function(){ask(0);top();};
+  }
+
+  function ask(i){
+    var pct=Math.round(i/Q.length*100);
+    card.innerHTML='<div class="prog"><span class="meta">Question '+(i+1)+' of '+Q.length+'</span></div>'
+      +'<div class="bar"><i style="width:'+pct+'%"></i></div>'
+      +'<div class="q">'+esc(Q[i].q)+'</div>'
+      +'<div class="opts"><button class="opt'+(ans[i]===1?' on':'')+'" data-v="1">Yes</button><button class="opt'+(ans[i]===0?' on':'')+'" data-v="0">No, or not sure</button></div>'
+      +(i>0?'<button class="back" id="back">Back</button>':'');
+    var o=card.querySelectorAll(".opt");
+    for(var k=0;k<o.length;k++){o[k].onclick=function(){
+      ans[i]=parseInt(this.getAttribute("data-v"),10);
+      if(i+1<Q.length){ask(i+1);}else{result();}
+    };}
+    var b=document.getElementById("back");if(b)b.onclick=function(){ask(i-1);};
+  }
+
+  function band(score){for(var i=0;i<BANDS.length;i++){if(score>=BANDS[i].min)return BANDS[i];}return BANDS[BANDS.length-1];}
+
+  function result(){
+    var score=0,gaps=[];
+    for(var i=0;i<Q.length;i++){if(ans[i]===1)score++;else gaps.push(Q[i]);}
+    var b=band(score);
+    var meter='';for(var m=0;m<10;m++)meter+='<i class="'+(m<score?'f':'')+'"></i>';
+    var gl='';
+    if(gaps.length){
+      gl='<div class="sect"><h3>What your family would be hunting for</h3><ul class="gaps">';
+      for(var g=0;g<gaps.length;g++)gl+='<li><b>'+esc(gaps[g].gap)+'</b><p>'+esc(gaps[g].tip)+'</p></li>';
+      gl+='</ul></div>';
+    } else {
+      gl='<div class="sect"><p class="lede">You answered yes to all ten. The one thing worth doing is checking it is all still current once a year.</p></div>';
+    }
+    card.innerHTML='<div class="eyebrow">Your result</div>'
+      +'<div class="score"><b>'+score+'</b><span>out of 10</span></div>'
+      +'<div class="meter" aria-hidden="true">'+meter+'</div>'
+      +'<h2>'+esc(b.head)+'</h2>'
+      +'<p class="lede">'+esc(b.body)+'</p>'
+      +gl
+      +'<div class="capture" id="cap"><h3>Want this list in your inbox?</h3>'
+      +'<p class="meta">We will email you your score and this list, plus the free Executor Toolkit. After that, three short notes over the next week. Unsubscribe any time.</p>'
+      +'<label for="fn">First name</label><input id="fn" type="text" autocomplete="given-name" autocapitalize="words">'
+      +'<label for="em">Email</label><input id="em" type="email" autocomplete="email" inputmode="email">'
+      +'<button class="btn full" id="send">Email me my result</button><div class="err" id="err" role="alert"></div></div>'
+      +'<div class="offer"><img src="/assets/card-both.jpg" alt="'+esc(PRODUCT)+', the printed book and the digital edition" loading="lazy">'
+      +'<div class="in"><h3>'+esc(b.offer_h)+'</h3><p>'+esc(b.offer_b)+'</p>'
+      +'<a class="btn" id="offer" href="'+SALES+'">'+esc(b.cta)+'</a>'
+      +'<p class="meta" style="margin:12px 0 0">'+esc(b.price)+'</p></div></div>'
+      +'<div class="retake"><button class="back" id="again">Start the self-check again</button></div>'
+      +'<p class="small">'+DISC+'</p>';
+    document.getElementById("send").onclick=function(){capture(score,gaps,b);};
+    document.getElementById("em").addEventListener("keydown",function(e){if(e.key==="Enter")capture(score,gaps,b);});
+    document.getElementById("again").onclick=function(){ans=[];intro();top();};
+    top();
+  }
+
+  function capture(score,gaps,b){
+    var fn=(document.getElementById("fn").value||"").trim().split(/\s+/)[0]||"";
+    var em=(document.getElementById("em").value||"").trim();
+    var err=document.getElementById("err");
+    if(!fn||fn.indexOf("@")>-1){err.textContent="Please put your first name in the first box.";err.style.display="block";return;}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){err.textContent="That email does not look quite right. Please check it.";err.style.display="block";return;}
+    err.style.display="none";
+    var src="";try{src=sessionStorage.getItem("eo_src")||"";}catch(e){}
+    var payload={kind:"selfcheck-"+MARKET,name:fn,email:em,source:src||("direct | "+location.pathname),score:score,gaps:gaps.map(function(g){return g.gap;})};
+    var btn=document.getElementById("send");btn.disabled=true;btn.textContent="Sending...";
+    var fail=function(){btn.disabled=false;btn.textContent="Try again";err.innerHTML='That did not go through. Please check the email address and try again. If it still will not work, email <a href="mailto:hello@theestateorganiser.ca">hello@theestateorganiser.ca</a> and we will add you by hand.';err.style.display="block";};
+    fetch(CAPTURE_URL,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify(payload)})
+      .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return r.ok&&j.ok!==false;});})
+      .then(function(ok){if(!ok)return fail();try{fbq("track","Lead");}catch(e){}try{gtag("event","generate_lead");}catch(e){}thanks(fn);})
+      .catch(fail);
+  }
+  function thanks(fn){
+    document.getElementById("cap").innerHTML='<h3>Thanks, '+esc(fn)+'. It is on its way.</h3>'
+      +'<p class="meta">Check your inbox in the next few minutes for your score, your list and the Executor Toolkit. If it is not there, look in your spam or promotions folder.</p>';
+  }
+
+  intro();
+})();
+</script>
+<script>/* lead source, 5 Sep 2026: remembers where a visit came from and sends it with the email a lead already typed. Nothing visible. */
+(function(){try{var K='eo_src',CAP='https://eo-cart-capture-production.up.railway.app/capture';var q=new URLSearchParams(location.search);var u=['utm_source','utm_medium','utm_campaign','utm_content'].map(function(k){return q.get(k)}).filter(Boolean).join('/');var rh='';try{rh=document.referrer?new URL(document.referrer).hostname.replace(/^www\./,''):''}catch(e){}var own=/theestateorganiser\./.test(rh);var s='';var src=q.get('utm_source')||'',med=q.get('utm_medium')||'',ua=navigator.userAgent||'';if(/^(paid|cpc|ppc|ads?)$/i.test(med))s=/^(tt|tiktok)$/i.test(src)?'tiktok-ad':/^(g|google)$/i.test(src)?'google-ad':'meta-ad';else if(q.get('gclid'))s='google-ad';else if(q.get('ttclid'))s='tiktok-ad';else if(/^(ig|instagram)$/i.test(src))s='instagram';else if(/^(fb|facebook)$/i.test(src))s='facebook';else if(/^(tt|tiktok)$/i.test(src))s='tiktok';else if(/instagram\.com$/.test(rh))s='instagram';else if(/tiktok\.com$/.test(rh))s='tiktok';else if(/facebook\.com$|^fb\.me$|^m\.me$/.test(rh))s='facebook';else if(/youtube\.com$|^youtu\.be$/.test(rh))s='youtube';else if(/google\./.test(rh))s='google';else if(/pinterest\./.test(rh))s='pinterest';else if(/manychat|mcht/.test(rh))s='manychat';else if(rh&&!own)s=rh;else if(!rh&&/Instagram/.test(ua))s='instagram-app';else if(!rh&&/FBAN|FBAV|FB_IAB/.test(ua))s='facebook-app';else if(q.get('fbclid'))s='facebook';var have='';try{have=sessionStorage.getItem(K)||''}catch(e){}if(!have||(s&&!own)||u){var v=(s||'direct')+(u?' | '+u:'')+' | '+location.pathname;try{sessionStorage.setItem(K,v)}catch(e){}}
+var sent={};function send(val){var src='';try{src=sessionStorage.getItem(K)||''}catch(e){}if(!src)src='direct | '+location.pathname;if(sent[val])return;sent[val]=1;setTimeout(function(){try{var b=JSON.stringify({kind:'source',email:val,source:src.slice(0,200)});if(navigator.sendBeacon){navigator.sendBeacon(CAP,new Blob([b],{type:'text/plain'}))}else{fetch(CAP,{method:'POST',body:b,keepalive:true,headers:{'Content-Type':'text/plain'}})}}catch(e){}},2500)}
+function emailNear(el){var n=el,i=0;while(n&&i<6){var em=n.querySelector&&n.querySelector('input[type=email]');if(em)return em;n=n.parentElement;i++}return null}
+document.addEventListener('submit',function(e){var f=e.target;var em=f&&f.querySelector?f.querySelector('input[type=email]'):null;if(em&&em.value&&em.value.indexOf('@')>0)send(em.value.trim().toLowerCase())},true);
+document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('button,.btn,input[type=submit]'):null;if(!t||t.closest('form'))return;var em=emailNear(t);if(em&&em.value&&em.value.indexOf('@')>0)send(em.value.trim().toLowerCase())},true);
+}catch(e){}})();</script>
+<script>/* 12 Sep 2026 - carries the remembered traffic source across to the checkout link, so cold buyers get a lead_source too. Nothing visible. */
+(function(){try{document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[href*="checkout.theestateorganiser."]'):null;if(!a)return;var s='';try{s=sessionStorage.getItem('eo_src')||''}catch(x){}if(!s)s='site '+location.pathname;var u=new URL(a.href);if(!u.searchParams.get('eo_src')){u.searchParams.set('eo_src',s.slice(0,200));a.href=u.toString()}},true)}catch(e){}})();</script>
+</body>
+</html>
