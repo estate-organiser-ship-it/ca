@@ -183,6 +183,16 @@
   .hbar .btn{margin-left:auto;padding:11px 16px;font-size:1rem;font-weight:800;}
   .btn-sub{display:block;font-size:.85em;font-weight:600;margin-top:2px;}
 }
+
+/* gift link in header */
+.hgift{color:#cfc9ba;text-decoration:none;font-size:.9rem;white-space:nowrap;margin-left:16px;border-bottom:1px solid transparent;padding-bottom:2px}
+.hgift:hover{color:#fff;border-bottom-color:#C8A24B}
+.hbar{flex-wrap:wrap;row-gap:4px}
+.hbar .btn{white-space:nowrap}
+.hnav a{white-space:nowrap}
+.hnav+.btn+.hgift{margin-left:0}
+@media(min-width:901px) and (max-width:1320px){.hbar .ed-pill{display:none}}
+@media(max-width:640px){.hgift{font-size:.82rem;margin-left:auto}}
 </style>
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2230204167748434');fbq('track','PageView');</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "The Estate Conversation Kit", "image": "https://theestateorganiser.ca/assets/kit-cover.jpg", "description": "The 7 conversations Canadian families keep putting off. Word-for-word opening lines, prompts, and a page to capture what you agreed. $27.", "brand": {"@type": "Brand", "name": "The Estate Organiser"}, "offers": {"@type": "Offer", "price": "27.00", "priceCurrency": "CAD", "availability": "https://schema.org/InStock", "url": "https://checkout.theestateorganiser.ca/ac605c57", "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "CA", "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow", "merchantReturnDays": 30, "returnMethod": "https://schema.org/ReturnByMail", "returnFees": "https://schema.org/FreeReturn", "merchantReturnLink": "https://theestateorganiser.ca/refund-policy/"}, "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "CAD"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "CA"}, "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}, "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}}}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "About an afternoon for the first conversation, including reading the script. Most families do one at a time, when it feels right."}}, {"@type": "Question", "name": "Is my information safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It's a file you fill in on your own computer, or print and fill in by hand. Nothing is stored online or in anyone's cloud, so there's nothing to be breached. Where you keep it is entirely up to you."}}, {"@type": "Question", "name": "Is this legal or financial advice?", "acceptedAnswer": {"@type": "Answer", "text": "No, and that is by design. The kit helps your family talk, decide and write down what was agreed. For wills, nominations and legal documents, take what you decide to a lawyer or notary."}}, {"@type": "Question", "name": "Does it work in my province?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The conversations apply anywhere in Canada, and where rules differ from province to province the kit flags it, like the Quebec rule that beneficiary designations belong in your will."}}, {"@type": "Question", "name": "What exactly do I get?", "acceptedAnswer": {"@type": "Answer", "text": "Seven scripted conversations, the Legacy Letter Starter prompts, a 12-item Trigger Events watchlist, a 20-item Silent-Killer Audit, and a one-page Executor Prep Letter template. One fillable, printable PDF."}}]}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D26NXBV715"></script>
@@ -204,6 +214,7 @@
       <a href="#faq">Questions</a>
     </nav>
     <a href="https://checkout.theestateorganiser.ca/ac605c57" class="btn">Get the Kit, $27</a>
+    <a class="hgift" href="/gift/">Give it as a gift</a>
   </div>
 </header>
 
@@ -518,6 +529,7 @@
       </div>
       <div>
         <a href="/the-estate-organiser/">Get the book</a>
+        <a href="/gift/">Give it as a gift</a>
         <a href="/blog/">Blog</a>
         <a href="/about/">About</a>
         <a href="/start-here/">Start here</a>
