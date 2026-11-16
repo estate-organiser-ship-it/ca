@@ -4,6 +4,10 @@
   "publish_hour": 9,
   "indexnow_key": "eb99418efb4ced25ea550f605acffb45",
   "entries": [
-    { "date": "2026-10-09", "slug": "what-to-do-when-someone-dies" }
+    { "date": "2026-10-09", "slug": "what-to-do-when-someone-dies" },
+    { "date": "2026-11-24", "slug": "cpp-death-benefit" },
+    { "date": "2026-12-08", "slug": "final-tax-return-after-death" },
+    { "date": "2026-12-22", "slug": "cpp-survivors-pension" },
+    { "date": "2027-01-05", "slug": "uncashed-cra-cheques-after-death" }
   ]
 }
